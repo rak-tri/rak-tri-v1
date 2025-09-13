@@ -1,0 +1,118 @@
+﻿{
+  "name": "RAK-TRI-V1",
+  "description": "Futuristic WhatsApp Bot by RAK-TRI | Tri Team | RAK Realm",
+  "keywords": ["whatsapp-bot", "nodejs", "automation", "ai-chatbot"],
+  "website": "https://rak-realm.com",
+  "repository": "https://github.com/rak-tri/rak-tri-v1",
+  "success_url": "/welcome",
+  "stack": "container-22",
+  "env": {
+    "RAK_TRI_VERSION": {
+      "description": "Bot version identifier",
+      "required": true,
+      "value": "v1.0.0"
+    },
+    "BOT_OWNER": {
+      "description": "Bot owner JID (format: 923xxxxxxxxx@s.whatsapp.net)",
+      "required": true
+    },
+    "TRI_TEAM_MEMBERS": {
+      "description": "Tri Team member JIDs (comma-separated)",
+      "required": true
+    },
+    "PREFIX": {
+      "description": "Command prefix",
+      "required": false,
+      "value": "/"
+    },
+    "SESSION_ID": {
+      "description": "Unique session identifier",
+      "required": true,
+      "generator": "secret"
+    },
+    "ANTI_BAN_MODE": {
+      "description": "Anti-ban protection level (low/medium/high/extreme)",
+      "required": false,
+      "value": "high"
+    },
+    "VC_MODE": {
+      "description": "Voice Command Mode (true/false)",
+      "required": false,
+      "value": "true"
+    },
+    "AUTO_SPAM_BLOCKER": {
+      "description": "Auto spam blocking system (true/false)",
+      "required": false,
+      "value": "true"
+    },
+    "BOT_LANGUAGE": {
+      "description": "Default bot language",
+      "required": false,
+      "value": "en"
+    },
+    "AI_PROVIDER": {
+      "description": "AI service provider (openai/gemini/custom)",
+      "required": false,
+      "value": "openai"
+    },
+    "ENCRYPTION_KEY": {
+      "description": "Encryption key for secure data storage",
+      "required": true,
+      "generator": "secret"
+    },
+    "AUTO_UPDATE": {
+      "description": "Enable auto-update system",
+      "required": false,
+      "value": "true"
+    },
+    "SELF_HEALING": {
+      "description": "Enable self-healing system",
+      "required": false,
+      "value": "true"
+    },
+    "GHOST_MODE": {
+      "description": "Enable ghost mode",
+      "required": false,
+      "value": "false"
+    },
+    "MAX_COMMAND_RISK_LEVEL": {
+      "description": "Maximum allowed command risk level (1-5)",
+      "required": false,
+      "value": "3"
+    },
+    "HOSTING_PLATFORM": {
+      "description": "Deployment platform (bot-hosting-net/replit/railway)",
+      "required": false,
+      "value": "bot-hosting-net"
+    }
+  },
+  "addons": [
+    {
+      "plan": "heroku-postgresql:mini"
+    },
+    {
+      "plan": "redis:mini"
+    }
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "https://github.com/rak-realm/rak-buildpack"
+    }
+  ],
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "professional"
+    },
+    "web": {
+      "quantity": 0,
+      "size": "free"
+    }
+  },
+  "scripts": {
+    "postdeploy": "npm run setup && npm run encrypt-keys"
+  }
+}

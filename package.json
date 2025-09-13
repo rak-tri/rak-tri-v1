@@ -1,0 +1,116 @@
+{
+  "name": "rak-tri-v1",
+  "version": "1.0.0",
+  "description": "Futuristic WhatsApp Bot by RAK-TRI | Tri Team | RAK Realm",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --enable-source-maps index.js",
+    "start:production": "NODE_ENV=production node --enable-source-maps index.js",
+    "start:development": "NODE_ENV=development node --enable-source-maps index.js",
+    "start:debug": "NODE_ENV=development node --inspect --enable-source-maps index.js",
+    "dev": "nodemon --exec node --enable-source-maps index.js",
+    "test": "jest --verbose",
+    "test:security": "npm audit --audit-level=high && snyk test",
+    "setup": "node scripts/setup.js",
+    "encrypt": "node scripts/encrypt-keys.js",
+    "backup": "node scripts/backup.js",
+    "update": "node scripts/update.js",
+    "clean": "node scripts/clean.js",
+    "lint": "eslint src/**/*.js",
+    "docker:build": "docker build -t rak-tri-v1 .",
+    "docker:run": "docker run -d --name rak-tri-v1 rak-tri-v1",
+    "docker:stop": "docker stop rak-tri-v1",
+    "docker:logs": "docker logs rak-tri-v1",
+    "postinstall": "node scripts/postinstall.js && npm run encrypt"
+  },
+  "keywords": [
+    "whatsapp-bot",
+    "automation",
+    "ai-chatbot",
+    "rak-realm",
+    "tri-team"
+  ],
+  "author": "RAK-TRI <rak-tri@rak-realm.com>",
+  "contributors": [
+    "ghost-official-1 <ghost1@tri-team.dev>",
+    "ghost-official-2 <ghost2@tri-team.dev>"
+  ],
+  "license": "RAK-TRI-PRIVATE-1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rak-tri/rak-tri-v1.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rak-tri/rak-tri-v1/issues"
+  },
+  "homepage": "https://rak-realm.com",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.500.0",
+    "@hapi/boom": "^10.0.1",
+    "axios": "^1.6.0",
+    "baileys": "^6.4.0",
+    "bcryptjs": "^2.4.3",
+    "chalk": "^4.1.2",
+    "crypto-js": "^4.2.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "fluent-ffmpeg": "^2.1.2",
+    "form-data": "^4.0.0",
+    "fs-extra": "^11.1.1",
+    "google-tts-api": "^2.0.2",
+    "googleapis": "^126.0.1",
+    "got": "^12.6.1",
+    "helmet": "^7.1.0",
+    "jest": "^29.7.0",
+    "jimp": "^0.22.10",
+    "jsonwebtoken": "^9.0.2",
+    "moment": "^2.29.4",
+    "mongoose": "^8.0.3",
+    "node-cron": "^3.0.2",
+    "node-fetch": "^3.3.2",
+    "pino": "^8.15.0",
+    "pino-pretty": "^10.2.0",
+    "qrcode-terminal": "^0.12.0",
+    "sharp": "^0.33.0",
+    "socket.io": "^4.7.4",
+    "sqlite3": "^5.1.6",
+    "uuid": "^9.0.1",
+    "winston": "^3.11.0",
+    "ws": "^8.14.2",
+    "youtubei.js": "^14.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.8",
+    "eslint": "^8.53.0",
+    "nodemon": "^3.0.1",
+    "snyk": "^1.1190.0"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0",
+    "yarn": ">=4.0.0"
+  },
+  "packageManager": "yarn@4.0.1",
+  "volta": {
+    "node": "20.9.0",
+    "yarn": "4.0.1"
+  },
+  "rak-realm": {
+    "version": "1.0.0",
+    "features": [
+      "anti-ban-protection",
+      "vc-mode",
+      "ai-responder",
+      "auto-spam-blocker",
+      "self-healing",
+      "auto-update",
+      "encrypted-storage"
+    ],
+    "required_environment": {
+      "encryption_key": "32-character-string",
+      "session_id": "unique-session-identifier",
+      "bot_owner": "whatsapp-jid"
+    }
+  }
+}

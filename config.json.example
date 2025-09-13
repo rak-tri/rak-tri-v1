@@ -1,0 +1,103 @@
+﻿{
+  "rak_tri_v1_configuration": {
+    "version": "1.0.0",
+    "metadata": {
+      "created_by": "RAK-TRI",
+      "team": "Tri Team",
+      "realm": "RAK Realm",
+      "creation_date": "2024-01-01",
+      "license": "RAK-TRI-PRIVATE-1.0"
+    },
+    
+    "core_settings": {
+      "bot_name": "RAK-TRI-V1",
+      "prefix": "/",
+      "language": "en",
+      "session_id": "rak_tri_session_unique_id",
+      "encryption_key": "your-32-character-secure-encryption-key"
+    },
+    
+    "ownership": {
+      "owner_jid": "923xxxxxxxxx@s.whatsapp.net",
+      "tri_team_members": [
+        "923xxxxxxxx1@s.whatsapp.net",
+        "923xxxxxxxx2@s.whatsapp.net",
+        "923xxxxxxxx3@s.whatsapp.net"
+      ],
+      "admin_list": [
+        "admin1@s.whatsapp.net",
+        "admin2@s.whatsapp.net"
+      ]
+    },
+    
+    "security": {
+      "anti_ban_mode": "high",
+      "max_command_risk": 3,
+      "command_cooldown_ms": 2000,
+      "firewall_enabled": true,
+      "auto_block_spam": true,
+      "link_protection": true,
+      "call_rejection": false
+    },
+    
+    "features": {
+      "vc_mode": true,
+      "auto_spam_blocker": true,
+      "ghost_mode": false,
+      "self_healing": true,
+      "auto_update": true,
+      "ai_responder": true,
+      "music_player": true,
+      "download_options": true,
+      "message_scheduler": true,
+      "auto_cleanup": true,
+      "group_intelligence": true,
+      "welcome_system": true,
+      "multi_language": true,
+      "encrypted_logs": true,
+      "status_dashboard": true,
+      "ghost_broadcast": true,
+      "theme_system": true,
+      "qr_backup": true,
+      "secure_vault": true,
+      "ai_chat_mode": true,
+      "alias_system": true,
+      "bot_messaging": true,
+      "reaction_bot": true,
+      "realm_sync": true,
+      "clone_generator": true,
+      "firewall_logs": true,
+      "smart_welcome": true
+    },
+    
+    "ai_services": {
+      "provider": "openai",
+      "openai_key": "encrypted:your_encrypted_openai_key",
+      "gemini_key": "encrypted:your_encrypted_gemini_key",
+      "max_tokens": 1000,
+      "temperature": 0.7
+    },
+    
+    "performance": {
+      "max_memory_mb": 512,
+      "restart_schedule": "0 0 */24 * * *",
+      "log_retention_days": 7,
+      "db_backup_interval_ms": 3600000,
+      "db_encryption": true
+    },
+    
+    "hosting": {
+      "platform": "bot-hosting-net",
+      "vps_mode": false,
+      "auto_scale": true,
+      "backup_strategy": "daily"
+    },
+    
+    "compliance": {
+      "copyright_notice": "RAK-TRI-V1 is private property of Tri Team. Unauthorized use prohibited.",
+      "license_type": "PRIVATE",
+      "terms_url": "https://rak-realm.com/terms",
+      "privacy_url": "https://rak-realm.com/privacy"
+    }
+  }
+}
